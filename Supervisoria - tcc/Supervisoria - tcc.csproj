@@ -51,6 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="TelaDeControle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaDeControle.Designer.cs">
+      <DependentUpon>TelaDeControle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Acesso_Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
