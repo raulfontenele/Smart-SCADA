@@ -16,6 +16,7 @@ namespace Supervisoria___tcc
         public Tela_login()
         {
             InitializeComponent();
+            Console.WriteLine("Qualquer bosta");
             Auxiliar.iniciarControleAcesso();
         }
 

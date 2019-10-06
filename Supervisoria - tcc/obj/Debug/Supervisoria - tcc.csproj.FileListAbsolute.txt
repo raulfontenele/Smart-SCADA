@@ -13,3 +13,38 @@ C:\Users\Raul\source\repos\Supervisoria - tcc\Supervisoria - tcc\bin\Debug\Syste
 C:\Users\Raul\source\repos\Supervisoria - tcc\Supervisoria - tcc\bin\Debug\PT\System.Data.SqlServerCe.resources.dll
 C:\Users\Raul\source\repos\Supervisoria - tcc\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_Acesso_Cadastro.resources
 C:\Users\Raul\source\repos\Supervisoria - tcc\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csproj.CopyComplete
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.exe.config
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.exe
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.pdb
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\PT\System.Data.SqlServerCe.resources.dll
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csprojAssemblyReference.cache
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Properties.Resources.resources
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_Acesso_Cadastro.resources
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_Cadastro.resources
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_login.resources
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csproj.GenerateResource.cache
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csproj.CoreCompileInputs.cache
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csproj.CopyComplete
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.exe
+C:\Users\raulf\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.pdb
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.exe.config
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.exe
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.pdb
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\MathNet.Numerics.dll
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\WindowsBase.dll
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\MathNet.Numerics.xml
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csprojAssemblyReference.cache
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Properties.Resources.resources
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaDeControle.resources
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_Acesso_Cadastro.resources
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_Cadastro.resources
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_login.resources
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csproj.GenerateResource.cache
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csproj.CoreCompileInputs.cache
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.csproj.CopyComplete
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.exe
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.pdb
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\S7.Net.dll
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\S7.Net.pdb
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaProducao.resources
+C:\Users\RAULFINHO\Documents\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_Graficos.resources

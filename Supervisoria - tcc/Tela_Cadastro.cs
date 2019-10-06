@@ -34,7 +34,7 @@ namespace Supervisoria___tcc
 
         private void BotaoCriarUsuario_Click(object sender, EventArgs e)
         {
-            if (caixaUsuario.TextLength > 0 && caixaSenha.TextLength > 0 && caixaNiveis.SelectedIndex >= 0 && caixaSenha.Text == caixaConfSenha.Text)
+            if (caixaUsuario.TextLength > 0 && caixaSenha.TextLength > 0 && caixaNiveis.SelectedIndex >= 0 && caixaSenha.Text == caixaConfSenha.Text && verificarExistencia()==false)
             {
                 CadastrarUsuario();
                 MessageBox.Show("Usuário cadastrado com sucesso.");
@@ -43,6 +43,10 @@ namespace Supervisoria___tcc
                 MessageBox.Show("Usuário ou senha inválidos!");
             else if (caixaUsuario.TextLength <= 0 && caixaSenha.TextLength <= 0)
                 MessageBox.Show("Nível de acesso não selecionado.");
+            else if (verificarExistencia())
+            {
+                MessageBox.Show("Usuário já cadastrado.");
+            }
             else
                 MessageBox.Show("O campo de confirmação não está igual ao campo da senha.");
         }
@@ -66,12 +70,47 @@ namespace Supervisoria___tcc
             comando.Parameters.AddWithValue(@"NivelDeAcesso", caixaNiveis.SelectedItem);
 
             //inserir no banco de dados
-            comando.CommandText = "INSERT INTO TabelaUsuarios VALUES(@Usuario,@Senha,@NivelDeAcesso)";
+            comando.CommandText = "INSERT INTO TabelaUsuarios(Usuario,Senha,NivelDeAcesso) VALUES(@Usuario,@Senha,@NivelDeAcesso)";
 
             comando.ExecuteNonQuery();
 
             comando.Dispose();
             ligacao.Dispose();
+        }
+        private bool verificarExistencia()
+        {
+            //Criar a ligação com a base de dados
+            SqlCeConnection ligacao = new SqlCeConnection();
+            ligacao.ConnectionString = @"Data Source = " + Auxiliar.base_dados;
+
+            //Abrindo ligação com a base de dados   
+            ligacao.Open();
+
+            //criar um comando
+            SqlCeCommand comando = new SqlCeCommand();
+            comando.Connection = ligacao;
+
+            //adicionando os parâmetros
+            comando.Parameters.AddWithValue(@"Usuario", caixaUsuario.Text);
+
+            //inserir no banco de dados
+            comando.CommandText = "SELECT COUNT(1) FROM TabelaUsuarios WHERE Usuario = @Usuario";
+
+            Object retorno = comando.ExecuteScalar();
+            comando.Dispose();
+            ligacao.Dispose();
+
+            if (retorno.Equals(1))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+
         }
     }
 }
