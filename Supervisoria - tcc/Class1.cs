@@ -25,7 +25,11 @@ namespace Supervisoria___tcc
 
         public static bool[] bitProdutos = new bool[6];
 
+        public static bool[] bitFuncionamento = new bool[3];
+
         public static bool controleDemanda = false;
+
+        public static int timer = 60;
 
 
 
@@ -108,6 +112,9 @@ namespace Supervisoria___tcc
                 "Bit2Produto2             int not null," +
                 "Bit1Produto3             int not null," +
                 "Bit2Produto3             int not null," +
+                "BitFuncBloco1            int not null," +
+                "BitFuncBloco2            int not null," +
+                "BitFuncBloco3            int not null," +
                 "DemandaProduto1          int not null," +
                 "DemandaProduto2          int not null," +
                 "DemandaProduto3          int not null," +
@@ -144,6 +151,9 @@ namespace Supervisoria___tcc
             comando.Parameters.AddWithValue(@"Bit2Produto2", Auxiliar.bitProdutos[3]);
             comando.Parameters.AddWithValue(@"Bit1Produto3", Auxiliar.bitProdutos[4]);
             comando.Parameters.AddWithValue(@"Bit2Produto3", Auxiliar.bitProdutos[5]);
+            comando.Parameters.AddWithValue(@"BitFuncBloco1", !Auxiliar.bitFuncionamento[0]);
+            comando.Parameters.AddWithValue(@"BitFuncBloco2", !Auxiliar.bitFuncionamento[1]);
+            comando.Parameters.AddWithValue(@"BitFuncBloco3", !Auxiliar.bitFuncionamento[2]);
             comando.Parameters.AddWithValue(@"DemandaProduto1", Auxiliar.demandaProdutos[0]);
             comando.Parameters.AddWithValue(@"DemandaProduto2", Auxiliar.demandaProdutos[1]);
             comando.Parameters.AddWithValue(@"DemandaProduto3", Auxiliar.demandaProdutos[2]);
@@ -154,11 +164,11 @@ namespace Supervisoria___tcc
 
 
             //inserir no banco de dados
-            comando.CommandText = "INSERT INTO TabelaControle(Bit1Produto1,Bit2Produto1,Bit2Produto1,Bit2Produto2," +
-                                  "Bit1Produto3,Bit2Produto3,DemandaProduto1,DemandaProduto2,DemandaProduto3," +
-                                  "QtdProduzidaProduto1,QtdProduzidaProduto2,QtdProduzidaProduto3) VALUES(@Bit1Produto1," +
-                                  "@Bit2Produto1,@Bit1Produto2,@Bit2Produto2,@Bit1Produto3,@Bit2Produto3,@DemandaProduto1," +
-                                  "@DemandaProduto2,@DemandaProduto3,@QtdProduzidaProduto1,@QtdProduzidaProduto2,QtdProduzidaProduto3)";
+            comando.CommandText = "INSERT INTO TabelaControle(Bit1Produto1,Bit2Produto1,Bit1Produto2,Bit2Produto2," +
+                                  "Bit1Produto3,Bit2Produto3,BitFuncBloco1,BitFuncBloco2,BitFuncBloco3,DemandaProduto1," +
+                                  "DemandaProduto2,DemandaProduto3,QtdProduzidaProduto1,QtdProduzidaProduto2,QtdProduzidaProduto3) VALUES(@Bit1Produto1," +
+                                  "@Bit2Produto1,@Bit1Produto2,@Bit2Produto2,@Bit1Produto3,@Bit2Produto3,@BitFuncBloco1,@BitFuncBloco2,@BitFuncBloco3,@DemandaProduto1," +
+                                  "@DemandaProduto2,@DemandaProduto3,@QtdProduzidaProduto1,@QtdProduzidaProduto2,@QtdProduzidaProduto3)";
             comando.ExecuteNonQuery();
 
             comando.Dispose();
@@ -199,10 +209,15 @@ namespace Supervisoria___tcc
             //Ligação com o CLP
             clp.Open();
 
+            //Dados da produção
             Auxiliar.qtdProduzidaProdutos[0] = ((uint)clp.Read("DB1.DBD2")).ConvertToDouble();
             Auxiliar.qtdProduzidaProdutos[1] = ((uint)clp.Read("DB1.DBD6")).ConvertToDouble();
             Auxiliar.qtdProduzidaProdutos[2] = ((uint)clp.Read("DB1.DBD10")).ConvertToDouble();
 
+            //Bits de funcionamento 
+            Auxiliar.bitFuncionamento[0] = (bool)clp.Read("DB1.DBX1.1");
+            Auxiliar.bitFuncionamento[1] = (bool)clp.Read("DB1.DBX1.2");
+            Auxiliar.bitFuncionamento[2] = (bool)clp.Read("DB1.DBX1.3");
             //Fechando conexão com o CLP
             clp.Close();
         }
@@ -247,6 +262,20 @@ namespace Supervisoria___tcc
             //Enviando valor dos bits de controle
             clp.Write("DB1.DBX0.0", false);
             clp.Write("DB1.DBX0.1", true);
+
+            //Fechando conexão com o CLP
+            clp.Close();
+        }
+
+        public static void enviarBitZerar()
+        {
+            Plc clp = new Plc(S7.Net.CpuType.S71200, "172.19.10.63", 0, 1);
+            //Ligação com o CLP
+            clp.Open();
+
+            //Enviando valor dos bits de controle
+            clp.Write("DB1.DBX1.0", true);
+            clp.Write("DB1.DBX1.0", false);
 
             //Fechando conexão com o CLP
             clp.Close();

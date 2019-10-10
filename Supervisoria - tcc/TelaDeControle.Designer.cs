@@ -48,6 +48,8 @@
             this.botao_Ligar = new System.Windows.Forms.Button();
             this.botao_desligar = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.botaoZerar = new System.Windows.Forms.Button();
+            this.botao_pause = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -212,13 +214,37 @@
             this.timer2.Interval = 60000;
             this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
+            // botaoZerar
+            // 
+            this.botaoZerar.Location = new System.Drawing.Point(315, 177);
+            this.botaoZerar.Name = "botaoZerar";
+            this.botaoZerar.Size = new System.Drawing.Size(79, 27);
+            this.botaoZerar.TabIndex = 18;
+            this.botaoZerar.TabStop = false;
+            this.botaoZerar.Text = "Zerar";
+            this.botaoZerar.UseVisualStyleBackColor = true;
+            this.botaoZerar.Click += new System.EventHandler(this.BotaoZerar_Click);
+            // 
+            // botao_pause
+            // 
+            this.botao_pause.Location = new System.Drawing.Point(315, 221);
+            this.botao_pause.Name = "botao_pause";
+            this.botao_pause.Size = new System.Drawing.Size(79, 27);
+            this.botao_pause.TabIndex = 19;
+            this.botao_pause.TabStop = false;
+            this.botao_pause.Text = "Pause";
+            this.botao_pause.UseVisualStyleBackColor = true;
+            this.botao_pause.Click += new System.EventHandler(this.Botao_pause_Click);
+            // 
             // TelaDeControle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.Capturar1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(948, 402);
+            this.ClientSize = new System.Drawing.Size(948, 405);
+            this.Controls.Add(this.botao_pause);
+            this.Controls.Add(this.botaoZerar);
             this.Controls.Add(this.botao_desligar);
             this.Controls.Add(this.botao_Ligar);
             this.Controls.Add(this.botao_Bit_Produtos);
@@ -237,7 +263,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botaoStatusProducao);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TelaDeControle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -268,5 +294,7 @@
         private System.Windows.Forms.Button botao_Ligar;
         private System.Windows.Forms.Button botao_desligar;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button botaoZerar;
+        private System.Windows.Forms.Button botao_pause;
     }
 }

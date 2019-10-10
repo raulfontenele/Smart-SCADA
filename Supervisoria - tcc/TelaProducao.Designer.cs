@@ -44,6 +44,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label_time = new System.Windows.Forms.Label();
+            this.timerSegundos = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +57,6 @@
             this.label1.Size = new System.Drawing.Size(170, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Produção do produto 1:";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -106,7 +107,7 @@
             // 
             // botao_voltar
             // 
-            this.botao_voltar.Location = new System.Drawing.Point(104, 305);
+            this.botao_voltar.Location = new System.Drawing.Point(60, 305);
             this.botao_voltar.Name = "botao_voltar";
             this.botao_voltar.Size = new System.Drawing.Size(96, 33);
             this.botao_voltar.TabIndex = 6;
@@ -116,7 +117,7 @@
             // 
             // botao_historico
             // 
-            this.botao_historico.Location = new System.Drawing.Point(399, 305);
+            this.botao_historico.Location = new System.Drawing.Point(285, 305);
             this.botao_historico.Name = "botao_historico";
             this.botao_historico.Size = new System.Drawing.Size(87, 33);
             this.botao_historico.TabIndex = 7;
@@ -175,11 +176,26 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Demanda do produto 1:";
             // 
+            // label_time
+            // 
+            this.label_time.AutoSize = true;
+            this.label_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_time.Location = new System.Drawing.Point(534, 296);
+            this.label_time.Name = "label_time";
+            this.label_time.Size = new System.Drawing.Size(0, 42);
+            this.label_time.TabIndex = 14;
+            // 
+            // timerSegundos
+            // 
+            this.timerSegundos.Interval = 1000;
+            this.timerSegundos.Tick += new System.EventHandler(this.TimerSegundos_Tick);
+            // 
             // TelaProducao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 450);
+            this.Controls.Add(this.label_time);
             this.Controls.Add(this.textBoxDemanda3);
             this.Controls.Add(this.textBoxDemanda2);
             this.Controls.Add(this.textBoxDemanda1);
@@ -196,6 +212,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TelaProducao";
             this.Text = "TelaProducao";
+            this.Load += new System.EventHandler(this.TelaProducao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,5 +235,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_time;
+        private System.Windows.Forms.Timer timerSegundos;
     }
 }

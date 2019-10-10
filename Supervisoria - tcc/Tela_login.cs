@@ -50,6 +50,7 @@ namespace Supervisoria___tcc
             if (retorno.Equals(1))
             {
                 TelaDeControle telaControle = new TelaDeControle();
+                this.Hide();
                 telaControle.ShowDialog();
             }
             else

@@ -17,14 +17,13 @@ namespace Supervisoria___tcc
             InitializeComponent();
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             Auxiliar.buscarValoresProducao();
+
+            //for (var i = 0;i<3;i++) Console.WriteLine("Controle"+ (i+1) + " = " + Auxiliar.bitFuncionamento[i]);
+
 
             caixaProducaoProduto1.Text = Auxiliar.qtdProduzidaProdutos[0].ToString();
             caixaProducaoProduto2.Text = Auxiliar.qtdProduzidaProdutos[1].ToString();
@@ -35,6 +34,8 @@ namespace Supervisoria___tcc
             textBoxDemanda3.Text = Auxiliar.demandaProdutos[2].ToString();
 
             //Auxiliar.enviarDadosProducao();
+
+            label_time.Text = Auxiliar.timer.ToString();
 
 
             //Console.WriteLine("Rodando tick 2");
@@ -49,6 +50,17 @@ namespace Supervisoria___tcc
         {
             Tela_Graficos telaGrafico = new Tela_Graficos();
             telaGrafico.Show();
+        }
+
+        private void TelaProducao_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimerSegundos_Tick(object sender, EventArgs e)
+        {
+            label_time.Text = Auxiliar.timer.ToString();
+            
         }
     }
 }
