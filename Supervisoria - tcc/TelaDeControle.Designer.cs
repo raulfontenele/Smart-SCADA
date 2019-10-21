@@ -166,7 +166,7 @@
             // 
             this.botaoStatusProducao.BackColor = System.Drawing.Color.Transparent;
             this.botaoStatusProducao.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.botaoStatusProducao.Location = new System.Drawing.Point(569, 194);
+            this.botaoStatusProducao.Location = new System.Drawing.Point(569, 195);
             this.botaoStatusProducao.Name = "botaoStatusProducao";
             this.botaoStatusProducao.Size = new System.Drawing.Size(247, 121);
             this.botaoStatusProducao.TabIndex = 14;

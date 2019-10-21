@@ -63,6 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="TelaAutonoma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaAutonoma.Designer.cs">
+      <DependentUpon>TelaAutonoma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaEscolhas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaEscolhas.Designer.cs">
+      <DependentUpon>TelaEscolhas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Graficos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,8 +124,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TelaAutonoma.resx">
+      <DependentUpon>TelaAutonoma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaDeControle.resx">
       <DependentUpon>TelaDeControle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaEscolhas.resx">
+      <DependentUpon>TelaEscolhas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaProducao.resx">
       <DependentUpon>TelaProducao.cs</DependentUpon>

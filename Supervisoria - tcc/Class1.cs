@@ -14,6 +14,8 @@ namespace Supervisoria___tcc
     {   // Define o endereço da pasta de dados
         public static string pasta_dados = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Bancos de dados\";
         public static string base_dados = pasta_dados + "DadosScada.sdf" + ";password = 'password123'";
+        public static string nome_usuario;
+        public static string ipCLP = "172.19.10.113";
         //public static string base_dados_controle = pasta_dados + "DadosScadaControle.sdf" + ";password = 'password123'";
 
         //Variáveis do supervisório
@@ -42,7 +44,7 @@ namespace Supervisoria___tcc
             if (!File.Exists(pasta_dados + "DadosScada.sdf"))
             {
                 criarBaseDadosAcessos();
-                criarBaseDadosControle();
+                criarTabelaControle();
                 criarUsuarioPrincipal();
                 
             }
@@ -65,9 +67,9 @@ namespace Supervisoria___tcc
                 Directory.CreateDirectory(pasta_dados);
 
             //Verificar se a base de dados existe
-            if (!File.Exists(pasta_dados + "DadosScadaControle.sdf"))
+            if (!File.Exists(pasta_dados + "DadosScada.sdf"))
             {
-                criarBaseDadosControle();
+                criarTabelaControle();
             }
         }
 
@@ -96,7 +98,7 @@ namespace Supervisoria___tcc
             ligacao.Dispose();
 
         }
-        private static void criarBaseDadosControle()
+        private static void criarTabelaControle()
         {
             SqlCeConnection ligacao = new SqlCeConnection();
             ligacao.ConnectionString = @"Data Source = " + base_dados;
@@ -105,6 +107,39 @@ namespace Supervisoria___tcc
             SqlCeCommand comando = new SqlCeCommand();
             comando.CommandText =
                 "CREATE TABLE TabelaControle (" +
+                "Id                       int not null primary key identity(0,1)," +
+                "Bit1Produto1             int not null," +
+                "Bit2Produto1             int not null," +
+                "Bit1Produto2             int not null," +
+                "Bit2Produto2             int not null," +
+                "Bit1Produto3             int not null," +
+                "Bit2Produto3             int not null," +
+                "BitFuncBloco1            int not null," +
+                "BitFuncBloco2            int not null," +
+                "BitFuncBloco3            int not null," +
+                "DemandaProduto1          int not null," +
+                "DemandaProduto2          int not null," +
+                "DemandaProduto3          int not null," +
+                "QtdProduzidaProduto1     int not null," +
+                "QtdProduzidaProduto2     int not null," +
+                "QtdProduzidaProduto3     int not null)";
+
+            comando.Connection = ligacao;
+            comando.ExecuteNonQuery();
+
+            comando.Dispose();
+            ligacao.Dispose();
+
+        }
+        public static void criarTabelaControleUsuario()
+        {
+            SqlCeConnection ligacao = new SqlCeConnection();
+            ligacao.ConnectionString = @"Data Source = " + base_dados;
+            ligacao.Open();
+
+            SqlCeCommand comando = new SqlCeCommand();
+            comando.CommandText =
+                "CREATE TABLE TabelaControle" + nome_usuario+ " (" +
                 "Id                       int not null primary key identity(0,1)," +
                 "Bit1Produto1             int not null," +
                 "Bit2Produto1             int not null," +
@@ -164,7 +199,7 @@ namespace Supervisoria___tcc
 
 
             //inserir no banco de dados
-            comando.CommandText = "INSERT INTO TabelaControle(Bit1Produto1,Bit2Produto1,Bit1Produto2,Bit2Produto2," +
+            comando.CommandText = "INSERT INTO TabelaControle" + nome_usuario + "(Bit1Produto1,Bit2Produto1,Bit1Produto2,Bit2Produto2," +
                                   "Bit1Produto3,Bit2Produto3,BitFuncBloco1,BitFuncBloco2,BitFuncBloco3,DemandaProduto1," +
                                   "DemandaProduto2,DemandaProduto3,QtdProduzidaProduto1,QtdProduzidaProduto2,QtdProduzidaProduto3) VALUES(@Bit1Produto1," +
                                   "@Bit2Produto1,@Bit1Produto2,@Bit2Produto2,@Bit1Produto3,@Bit2Produto3,@BitFuncBloco1,@BitFuncBloco2,@BitFuncBloco3,@DemandaProduto1," +
@@ -205,7 +240,7 @@ namespace Supervisoria___tcc
 
         public static void buscarValoresProducao()
         {
-            Plc clp = new Plc(S7.Net.CpuType.S71200, "172.19.10.63", 0, 1);
+            Plc clp = new Plc(S7.Net.CpuType.S71200, ipCLP, 0, 1);
             //Ligação com o CLP
             clp.Open();
 
@@ -224,7 +259,7 @@ namespace Supervisoria___tcc
 
         public static void enviarBitProdutos()
         {
-            Plc clp = new Plc(S7.Net.CpuType.S71200, "172.19.10.63", 0, 1);
+            Plc clp = new Plc(S7.Net.CpuType.S71200, ipCLP, 0, 1);
             //Ligação com o CLP
             clp.Open();
 
@@ -242,7 +277,7 @@ namespace Supervisoria___tcc
 
         public static void enviarBitLigar()
         {
-            Plc clp = new Plc(S7.Net.CpuType.S71200, "172.19.10.63", 0, 1);
+            Plc clp = new Plc(S7.Net.CpuType.S71200, ipCLP, 0, 1);
             //Ligação com o CLP
             clp.Open();
 
@@ -255,7 +290,7 @@ namespace Supervisoria___tcc
         }
         public static void EnviarBitDesligar()
         {
-            Plc clp = new Plc(S7.Net.CpuType.S71200, "172.19.10.63", 0, 1);
+            Plc clp = new Plc(S7.Net.CpuType.S71200, ipCLP, 0, 1);
             //Ligação com o CLP
             clp.Open();
 
@@ -269,7 +304,7 @@ namespace Supervisoria___tcc
 
         public static void enviarBitZerar()
         {
-            Plc clp = new Plc(S7.Net.CpuType.S71200, "172.19.10.63", 0, 1);
+            Plc clp = new Plc(S7.Net.CpuType.S71200, ipCLP, 0, 1);
             //Ligação com o CLP
             clp.Open();
 

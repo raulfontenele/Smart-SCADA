@@ -49,9 +49,17 @@ namespace Supervisoria___tcc
             Object retorno = comando.ExecuteScalar();
             if (retorno.Equals(1))
             {
-                TelaDeControle telaControle = new TelaDeControle();
+                Auxiliar.nome_usuario = caixaUsuario.Text;
+                try
+                {
+                    Auxiliar.criarTabelaControleUsuario();
+                }
+                catch { }
+                
+                TelaEscolhas tela_Escolhas = new TelaEscolhas();
                 this.Hide();
-                telaControle.ShowDialog();
+                tela_Escolhas.ShowDialog();
+                this.Show();
             }
             else
             {
@@ -60,6 +68,11 @@ namespace Supervisoria___tcc
 
             comando.Dispose();
             ligacao.Dispose();
+        }
+
+        private void Botao_Voltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
