@@ -23,7 +23,9 @@ namespace Supervisoria___tcc
         private void BotaoCadastro_Click(object sender, EventArgs e)
         {
             Tela_Acesso_Cadastro TelaAcessoCadastro = new Tela_Acesso_Cadastro();
+            this.Hide();
             TelaAcessoCadastro.ShowDialog();
+            this.Show();
         }
 
         private void BotaoEntrar_Click(object sender, EventArgs e)
@@ -74,5 +76,6 @@ namespace Supervisoria___tcc
         {
             this.Close();
         }
+
     }
 }

@@ -31,7 +31,7 @@ namespace Supervisoria___tcc
 
         public static bool controleDemanda = false;
 
-        public static int timer = 60;
+        public static int timer = 600;
 
 
 

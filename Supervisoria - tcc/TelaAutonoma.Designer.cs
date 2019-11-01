@@ -63,12 +63,12 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 800;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // timer2
             // 
-            this.timer2.Interval = 60000;
+            this.timer2.Interval = 600000;
             this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // textBoxDemanda1
@@ -114,11 +114,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(291, 252);
+            this.button1.Location = new System.Drawing.Point(680, 79);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 42);
+            this.button1.Size = new System.Drawing.Size(88, 27);
             this.button1.TabIndex = 7;
-            this.button1.Text = "teste";
+            this.button1.Text = "Processar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 

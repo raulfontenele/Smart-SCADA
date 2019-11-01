@@ -22,6 +22,7 @@ namespace Supervisoria___tcc
             if(caiaxaUsuario.Text == "Adm" && caixaSenha.Text == "Adm123")
             {
                 Tela_Cadastro telaCadastro = new Tela_Cadastro();
+                this.Hide();
                 telaCadastro.ShowDialog();
                 this.Close();
             }

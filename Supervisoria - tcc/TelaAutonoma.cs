@@ -18,8 +18,8 @@ namespace Supervisoria___tcc
         {
             InitializeComponent();
         }
-        static int[] vet = new int[] { 16, 12, 10};
-        static MLP teste = new MLP(0.8, 0.000001, vet, 6, 15000);
+        static int[] vet = new int[] { 10,10,10,10};
+        static MLP teste = new MLP(0.3, 0.000001, vet, 6, 12000);
 
         bool ctr = false;
         Stopwatch timerCtr = new Stopwatch();
@@ -52,27 +52,33 @@ namespace Supervisoria___tcc
 
         private void Timer2_Tick(object sender, EventArgs e)
         {
+            /*
             double[] demanda = sortearDemanda();
 
-            Auxiliar.demandaProdutos[0] = Auxiliar.demandaProdutos[0] + demanda[0];
-            Auxiliar.demandaProdutos[1] = Auxiliar.demandaProdutos[1] + demanda[1];
-            Auxiliar.demandaProdutos[2] = Auxiliar.demandaProdutos[2] + demanda[2];
+            Auxiliar.demandaProdutos[0] = demanda[0];
+            Auxiliar.demandaProdutos[1] = demanda[1];
+            Auxiliar.demandaProdutos[2] = demanda[2];
 
             textBoxDemanda1.Text = demanda[0].ToString();
             textBoxDemanda2.Text = demanda[1].ToString();
             textBoxDemanda3.Text = demanda[2].ToString();
-
+            */
             //Auxiliar.EnviarBitDesligar();
 
             //timer1.Enabled = false;
             //timer2.Enabled = false;
 
-            timer2.Interval = 60000;
+            timer2.Interval = 600000;
             timer1.Interval = 1000;
 
-            Auxiliar.timer = 60;
+            timer1.Enabled = false;
+            timer2.Enabled = false;
+
+            Auxiliar.timer = 600;
 
             timerCtr.Reset();
+
+            Auxiliar.EnviarBitDesligar();
         }
 
         private double[] sortearDemanda()
@@ -87,47 +93,24 @@ namespace Supervisoria___tcc
             {
                 if (value == 0)
                 {
-                    demanda[0] = rand.Next(6);
-                    demanda[1] = rand.Next(6);
-                    demanda[2] = 14 - demanda[0] - demanda[1];
+                    demanda[0] = rand.Next(70);
+                    demanda[1] = rand.Next(70);
+                    demanda[2] = 200 - demanda[0] - demanda[1];
                 }
                 else if (value == 1)
                 {
-                    demanda[0] = rand.Next(6);
-                    demanda[2] = rand.Next(6);
-                    demanda[1] = 14 - demanda[0] - demanda[2];
+                    demanda[0] = rand.Next(70);
+                    demanda[2] = rand.Next(70);
+                    demanda[1] = 200 - demanda[0] - demanda[2];
                 }
                 else if (value == 2)
                 {
-                    demanda[1] = rand.Next(6);
-                    demanda[2] = rand.Next(6);
-                    demanda[0] = 14 - demanda[1] - demanda[2];
+                    demanda[1] = rand.Next(70);
+                    demanda[2] = rand.Next(70);
+                    demanda[0] = 200 - demanda[1] - demanda[2];
                 }
 
-                ctr = true;
             }
-            else
-            {
-                if (value == 0)
-                {
-                    demanda[0] = rand.Next(6);
-                    demanda[1] = rand.Next(6);
-                    demanda[2] = 16 - demanda[0] - demanda[1];
-                }
-                else if (value == 1)
-                {
-                    demanda[0] = rand.Next(6);
-                    demanda[2] = rand.Next(6);
-                    demanda[1] = 16 - demanda[0] - demanda[2];
-                }
-                else if (value == 2)
-                {
-                    demanda[1] = rand.Next(6);
-                    demanda[2] = rand.Next(6);
-                    demanda[0] = 16 - demanda[1] - demanda[2];
-                }
-            }
-
 
             return demanda;
 
@@ -181,6 +164,8 @@ namespace Supervisoria___tcc
                 vetorEntrada[index + 6] = Auxiliar.qtdProduzidaProdutos[index];
             }
             Console.WriteLine("=================");
+            //var vetinho = Matrix<double>.Build.Dense( 1,9,vetorEntrada);
+            //Console.WriteLine("vetinho" + vetinho);
             
             var retorno= (Matrix<double>)teste.aplicacao(vetorEntrada);
             Console.WriteLine(retorno);
@@ -210,9 +195,11 @@ namespace Supervisoria___tcc
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            double[] vet = new double[] {1,1,1,0, 4, 10, 0, 4, 8};
-            var retorno = (Matrix<double>)teste.aplicacao(vet);
-            Console.WriteLine(retorno);
+            Auxiliar.demandaProdutos[0] = Convert.ToDouble(textBoxDemanda1.Text);
+            Auxiliar.demandaProdutos[1] = Convert.ToDouble(textBoxDemanda2.Text);
+            Auxiliar.demandaProdutos[2] = Convert.ToDouble(textBoxDemanda3.Text);
+
+            MessageBox.Show("Demanda processada com sucesso!");
         }
     }
 }

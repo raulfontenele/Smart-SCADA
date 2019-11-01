@@ -211,7 +211,7 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 60000;
+            this.timer2.Interval = 600000;
             this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // botaoZerar

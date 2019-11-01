@@ -87,7 +87,7 @@ namespace Supervisoria___tcc
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine("Entrou no tck 1");
+            //Console.WriteLine("Entrou no tck 1");
             Auxiliar.buscarValoresProducao();
             Auxiliar.enviarDadosProducao();
 
@@ -212,9 +212,13 @@ namespace Supervisoria___tcc
             //Console.WriteLine("Entrou no tick 2");
             double[] demanda = sortearDemanda();
 
-            Auxiliar.demandaProdutos[0] = Auxiliar.demandaProdutos[0] + demanda[0];
-            Auxiliar.demandaProdutos[1] = Auxiliar.demandaProdutos[1] + demanda[1];
-            Auxiliar.demandaProdutos[2] = Auxiliar.demandaProdutos[2] + demanda[2];
+            Auxiliar.demandaProdutos[0] =  demanda[0];
+            Auxiliar.demandaProdutos[1] =  demanda[1];
+            Auxiliar.demandaProdutos[2] =  demanda[2];
+
+            //Auxiliar.demandaProdutos[0] = Auxiliar.demandaProdutos[0] + demanda[0];
+            //Auxiliar.demandaProdutos[1] = Auxiliar.demandaProdutos[1] + demanda[1];
+            //Auxiliar.demandaProdutos[2] = Auxiliar.demandaProdutos[2] + demanda[2];
 
             textBoxDemanda1.Text = demanda[0].ToString();
             textBoxDemanda2.Text = demanda[1].ToString();
@@ -225,10 +229,10 @@ namespace Supervisoria___tcc
             timer1.Enabled = false;
             timer2.Enabled = false;
 
-            timer2.Interval = 60000;
+            timer2.Interval = 600000;
             timer1.Interval = 1000;
 
-            Auxiliar.timer = 60;
+            Auxiliar.timer = 600;
 
             timerCtr.Reset();
             
@@ -246,32 +250,33 @@ namespace Supervisoria___tcc
             {
                 if (value == 0)
                 {
-                    demanda[0] = rand.Next(6);
-                    demanda[1] = rand.Next(6);
-                    demanda[2] = 14 - demanda[0] - demanda[1];
+                    demanda[0] = rand.Next(70);
+                    demanda[1] = rand.Next(70);
+                    demanda[2] = 200 - demanda[0] - demanda[1];
                 }
                 else if (value == 1)
                 {
-                    demanda[0] = rand.Next(6);
-                    demanda[2] = rand.Next(6);
-                    demanda[1] = 14 - demanda[0] - demanda[2];
+                    demanda[0] = rand.Next(70);
+                    demanda[2] = rand.Next(70);
+                    demanda[1] = 200 - demanda[0] - demanda[2];
                 }
                 else if (value == 2)
                 {
-                    demanda[1] = rand.Next(6);
-                    demanda[2] = rand.Next(6);
-                    demanda[0] = 14 - demanda[1] - demanda[2];
+                    demanda[1] = rand.Next(70);
+                    demanda[2] = rand.Next(70);
+                    demanda[0] = 200 - demanda[1] - demanda[2];
                 }
 
-                ctr = true;
+                //ctr = true;
             }
+            /*
             else
             {
                 if (value == 0)
                 {
                     demanda[0] = rand.Next(6);
                     demanda[1] = rand.Next(6);
-                    demanda[2] = 16 - demanda[0] - demanda[1];
+                    demanda[2] = 100 - demanda[0] - demanda[1];
                 }
                 else if (value == 1)
                 {
@@ -286,6 +291,7 @@ namespace Supervisoria___tcc
                     demanda[0] = 16 - demanda[1] - demanda[2];
                 }
             }
+            */
            
 
             return demanda;
@@ -294,7 +300,26 @@ namespace Supervisoria___tcc
 
         private void BotaoZerar_Click(object sender, EventArgs e)
         {
+            timer1.Enabled = false;
+            timer2.Enabled = false;
+            timerCtr.Reset();
+            //timer1.Interval = false;
+            timer2.Interval = 600000;
+            Auxiliar.timer = 600;
             Auxiliar.enviarBitZerar();
+
+            double[] demanda = sortearDemanda();
+
+            Auxiliar.demandaProdutos[0] = demanda[0];
+            Auxiliar.demandaProdutos[1] = demanda[1];
+            Auxiliar.demandaProdutos[2] = demanda[2];
+
+
+            textBoxDemanda1.Text = demanda[0].ToString();
+            textBoxDemanda2.Text = demanda[1].ToString();
+            textBoxDemanda3.Text = demanda[2].ToString();
+
+
         }
         bool ctrPause = false;
         private void Botao_pause_Click(object sender, EventArgs e)
@@ -316,7 +341,7 @@ namespace Supervisoria___tcc
                 timer1.Enabled = true;
                 timer2.Enabled = true;
 
-                timer2.Interval = 60000 - (int)timerCtr.ElapsedMilliseconds;
+                timer2.Interval = 600000 - (int)timerCtr.ElapsedMilliseconds;
                 timer1.Interval = 1000 - (int)timerCtr.ElapsedMilliseconds % 1000;
 
                 Auxiliar.enviarBitLigar();
