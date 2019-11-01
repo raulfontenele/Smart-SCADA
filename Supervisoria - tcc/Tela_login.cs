@@ -36,7 +36,7 @@ namespace Supervisoria___tcc
 
             //Abrindo ligação com a base de dados   
             ligacao.Open();
-
+            
             //criar um comando
             SqlCeCommand comando = new SqlCeCommand();
             comando.Connection = ligacao;
@@ -45,7 +45,7 @@ namespace Supervisoria___tcc
             comando.Parameters.AddWithValue(@"Usuario", caixaUsuario.Text);
             comando.Parameters.AddWithValue(@"Senha", caixaSenha.Text);
 
-            //inserir no banco de dados
+            //Buscar no banco de dados o nome de usuário e a senha
             comando.CommandText = "SELECT COUNT(1) FROM TabelaUsuarios WHERE Usuario = @Usuario AND Senha = @Senha";
 
             Object retorno = comando.ExecuteScalar();
@@ -57,11 +57,23 @@ namespace Supervisoria___tcc
                     Auxiliar.criarTabelaControleUsuario();
                 }
                 catch { }
-                
+
+                //Capturar Nome de usuário e nível de acesso.
+                comando.CommandText = "SELECT NivelDeAcesso FROM TabelaUsuarios WHERE Usuario = '" + caixaUsuario.Text + "' AND Senha = '" + caixaSenha.Text+"'";
+
+                Auxiliar.nome_usuario = caixaUsuario.Text;
+                Auxiliar.nivel_acesso = comando.ExecuteScalar().ToString();
+
+                Tela_ControleCentral tela_Central = new Tela_ControleCentral();
+                this.Hide();
+                tela_Central.ShowDialog();
+                /*
                 TelaEscolhas tela_Escolhas = new TelaEscolhas();
                 this.Hide();
                 tela_Escolhas.ShowDialog();
+                */
                 this.Show();
+                
             }
             else
             {

@@ -62,5 +62,6 @@ namespace Supervisoria___tcc
             label_time.Text = Auxiliar.timer.ToString();
             
         }
+
     }
 }

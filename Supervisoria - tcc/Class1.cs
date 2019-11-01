@@ -15,6 +15,7 @@ namespace Supervisoria___tcc
         public static string pasta_dados = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Bancos de dados\";
         public static string base_dados = pasta_dados + "DadosScada.sdf" + ";password = 'password123'";
         public static string nome_usuario;
+        public static string nivel_acesso;
         public static string ipCLP = "172.19.10.113";
         //public static string base_dados_controle = pasta_dados + "DadosScadaControle.sdf" + ";password = 'password123'";
 

@@ -339,7 +339,7 @@ namespace Supervisoria___tcc
             findMaxMinValues(xTrainAux);
             Matrix<double> xTest = (Matrix<double>)preparacaoMatrizEntradaAplicacao(xTestAux);
             //Console.WriteLine("Xteste:" + xTest);
-            var cont = 0;
+            //var cont = 0;
 
             //Para todas as amostras
             for (var amostra = 1; amostra <= xTestAux.RowCount; amostra++)
