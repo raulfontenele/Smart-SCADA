@@ -25,7 +25,7 @@ namespace Supervisoria___tcc
             ligacao.Open();
 
             //Retirar dados da base de dados
-            SqlCeDataAdapter adaptador = new SqlCeDataAdapter("SELECT * FROM tabelinha2", ligacao);
+            SqlCeDataAdapter adaptador = new SqlCeDataAdapter("SELECT * FROM TabelaControle" + Auxiliar.nome_usuario, ligacao);
 
             //Criando tabela de dados
             DataTable dados = new DataTable(); 
@@ -36,8 +36,8 @@ namespace Supervisoria___tcc
             
             //Definindo fonde de dados do gráfico e qual a fonte das linhas e das colunas
             chart1.DataSource = data;
-            chart1.Series[0].XValueMember = "ID";
-            chart1.Series[0].YValueMembers = "Usuario";
+            chart1.Series[0].XValueMember = "DemandaProduto1";
+            chart1.Series[0].YValueMembers = "QtdProduzidaProduto1";
             chart1.DataBind();
 
             //Desligando todas as ligações
@@ -48,6 +48,11 @@ namespace Supervisoria___tcc
         private void Timer1_Tick(object sender, EventArgs e)
         {
             mostrarGrafico();
+        }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

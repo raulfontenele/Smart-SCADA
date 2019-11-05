@@ -60,7 +60,8 @@
             // 
             this.botaoConfirmar.BackColor = System.Drawing.Color.CornflowerBlue;
             this.botaoConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoConfirmar.Location = new System.Drawing.Point(97, 178);
+            this.botaoConfirmar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoConfirmar.Location = new System.Drawing.Point(97, 180);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(133, 50);
             this.botaoConfirmar.TabIndex = 2;
@@ -72,7 +73,8 @@
             // 
             this.botaoVoltar.BackColor = System.Drawing.Color.CornflowerBlue;
             this.botaoVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoVoltar.Location = new System.Drawing.Point(97, 258);
+            this.botaoVoltar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoVoltar.Location = new System.Drawing.Point(97, 271);
             this.botaoVoltar.Name = "botaoVoltar";
             this.botaoVoltar.Size = new System.Drawing.Size(133, 50);
             this.botaoVoltar.TabIndex = 3;
@@ -116,7 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(326, 450);
+            this.ClientSize = new System.Drawing.Size(326, 426);
             this.ControlBox = false;
             this.Controls.Add(this.label_confirmacao);
             this.Controls.Add(this.pictureBox2);

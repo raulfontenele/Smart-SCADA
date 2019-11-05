@@ -63,15 +63,16 @@ namespace Supervisoria___tcc
 
                 Auxiliar.nome_usuario = caixaUsuario.Text;
                 Auxiliar.nivel_acesso = comando.ExecuteScalar().ToString();
-
+                
                 Tela_ControleCentral tela_Central = new Tela_ControleCentral();
                 this.Hide();
                 tela_Central.ShowDialog();
+                
                 /*
                 TelaEscolhas tela_Escolhas = new TelaEscolhas();
                 this.Hide();
                 tela_Escolhas.ShowDialog();
-                */
+            */
                 this.Show();
                 
             }

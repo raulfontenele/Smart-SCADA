@@ -15,6 +15,7 @@ namespace Supervisoria___tcc
         public Tela_Acesso_Cadastro()
         {
             InitializeComponent();
+            
         }
 
         private void BotaoConfirmar_Click(object sender, EventArgs e)

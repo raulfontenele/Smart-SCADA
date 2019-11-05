@@ -37,5 +37,10 @@ namespace Supervisoria___tcc
             tela_Autonoma.Show();
             this.Close();
         }
+
+        private void TelaEscolhas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

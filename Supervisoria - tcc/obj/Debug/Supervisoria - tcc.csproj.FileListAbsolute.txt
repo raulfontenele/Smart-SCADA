@@ -92,7 +92,6 @@ C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisori
 C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.pdb
 C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaAutonoma.resources
 C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaEscolhas.resources
-C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.ControleCentral.resources
 C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.exe.config
 C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.exe
 C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\bin\Debug\Supervisoria - tcc.pdb
@@ -119,3 +118,11 @@ C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\S
 C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.exe
 C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria - tcc.pdb
 C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_ControleCentral.resources
+C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_ControleCentral.resources
+C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCMonitoramento.resources
+C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCAquisicao.resources
+C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_ControleCentral.resources
+C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaAutonoma.resources
+C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaEscolhas.resources
+C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCAquisicao.resources
+C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCMonitoramento.resources

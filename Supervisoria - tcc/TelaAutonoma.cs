@@ -18,9 +18,10 @@ namespace Supervisoria___tcc
         {
             InitializeComponent();
         }
-        static int[] vet = new int[] { 10,10,10,10};
+        
+        static int[] vet = new int[] {8,8,8,8};
         static MLP teste = new MLP(0.3, 0.000001, vet, 6, 12000);
-
+        
         bool ctr = false;
         Stopwatch timerCtr = new Stopwatch();
 
@@ -34,9 +35,9 @@ namespace Supervisoria___tcc
         private void Botao_Treinamento_Click(object sender, EventArgs e)
         {
 
-            var eqm = teste.treinamento();
+           // var eqm = teste.treinamento();
             Console.WriteLine("//===================================//");
-            Console.WriteLine("Erro quadrático médio do treinamento:" + eqm);
+           // Console.WriteLine("Erro quadrático médio do treinamento:" + eqm);
             MessageBox.Show("Terminado o treinamento");
         }
 
@@ -89,8 +90,6 @@ namespace Supervisoria___tcc
 
             var value = rand.Next(3);
 
-            if (ctr == false)
-            {
                 if (value == 0)
                 {
                     demanda[0] = rand.Next(70);
@@ -110,7 +109,7 @@ namespace Supervisoria___tcc
                     demanda[0] = 200 - demanda[1] - demanda[2];
                 }
 
-            }
+            
 
             return demanda;
 
@@ -131,37 +130,39 @@ namespace Supervisoria___tcc
 
         private void Botao_AplicacaoRede_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("Demanda:" + Auxiliar.demandaProdutos[0] + ":" + Auxiliar.demandaProdutos[1] + ":" + Auxiliar.demandaProdutos[2]);
             timer1.Enabled = true;
             timer2.Enabled = true;
             aplicarRede();
 
             Auxiliar.enviarBitLigar();
-            timerCtr.Start();
+            //timerCtr.Start();
         }
 
         private void aplicarRede()
         {
             Auxiliar.buscarValoresProducao();
-            double[] vetorEntrada = new double[9];
+            double[] vetorEntrada = new double[6];
+            
             for (var index = 0; index < 3; index++)
             {
                 if (Auxiliar.bitFuncionamento[index] == true)
                 {
-                    vetorEntrada[index] = 1;
+                    vetorEntrada[index] = 0;
                 }
                 else
                 {
-                    vetorEntrada[index] = -1;
+                    vetorEntrada[index] = 1;
                 }
             }
-
+            
             for (var index = 0; index < 3; index++)
             {
-                vetorEntrada[index + 3] = Auxiliar.demandaProdutos[index];
+                vetorEntrada[index] = Auxiliar.demandaProdutos[index];
             }
             for (var index = 0; index < 3; index++)
             {
-                vetorEntrada[index + 6] = Auxiliar.qtdProduzidaProdutos[index];
+                vetorEntrada[index + 3] = Auxiliar.qtdProduzidaProdutos[index];
             }
             Console.WriteLine("=================");
             //var vetinho = Matrix<double>.Build.Dense( 1,9,vetorEntrada);

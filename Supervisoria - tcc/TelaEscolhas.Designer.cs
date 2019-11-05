@@ -73,6 +73,7 @@
             this.Controls.Add(this.botao_Tela_Controle);
             this.Name = "TelaEscolhas";
             this.Text = "TelaEscolhas";
+            this.Load += new System.EventHandler(this.TelaEscolhas_Load);
             this.ResumeLayout(false);
 
         }

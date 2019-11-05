@@ -37,7 +37,6 @@
             this.caixaProducaoProduto3 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.botao_voltar = new System.Windows.Forms.Button();
-            this.botao_historico = new System.Windows.Forms.Button();
             this.textBoxDemanda3 = new System.Windows.Forms.TextBox();
             this.textBoxDemanda2 = new System.Windows.Forms.TextBox();
             this.textBoxDemanda1 = new System.Windows.Forms.TextBox();
@@ -110,23 +109,13 @@
             // 
             this.botao_voltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
             this.botao_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botao_voltar.Location = new System.Drawing.Point(69, 286);
+            this.botao_voltar.Location = new System.Drawing.Point(69, 318);
             this.botao_voltar.Name = "botao_voltar";
             this.botao_voltar.Size = new System.Drawing.Size(109, 52);
             this.botao_voltar.TabIndex = 6;
             this.botao_voltar.Text = "Voltar";
             this.botao_voltar.UseVisualStyleBackColor = true;
             this.botao_voltar.Click += new System.EventHandler(this.Botao_voltar_Click);
-            // 
-            // botao_historico
-            // 
-            this.botao_historico.Location = new System.Drawing.Point(69, 372);
-            this.botao_historico.Name = "botao_historico";
-            this.botao_historico.Size = new System.Drawing.Size(87, 33);
-            this.botao_historico.TabIndex = 7;
-            this.botao_historico.Text = "Histórico";
-            this.botao_historico.UseVisualStyleBackColor = true;
-            this.botao_historico.Click += new System.EventHandler(this.Botao_historico_Click);
             // 
             // textBoxDemanda3
             // 
@@ -183,7 +172,7 @@
             // 
             this.label_time.AutoSize = true;
             this.label_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_time.Location = new System.Drawing.Point(447, 299);
+            this.label_time.Location = new System.Drawing.Point(573, 314);
             this.label_time.Name = "label_time";
             this.label_time.Size = new System.Drawing.Size(0, 42);
             this.label_time.TabIndex = 14;
@@ -197,7 +186,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(360, 314);
+            this.label7.Location = new System.Drawing.Point(324, 329);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(175, 24);
             this.label7.TabIndex = 15;
@@ -217,7 +206,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.botao_historico);
             this.Controls.Add(this.botao_voltar);
             this.Controls.Add(this.caixaProducaoProduto3);
             this.Controls.Add(this.caixaProducaoProduto2);
@@ -244,7 +232,6 @@
         private System.Windows.Forms.TextBox caixaProducaoProduto3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button botao_voltar;
-        private System.Windows.Forms.Button botao_historico;
         private System.Windows.Forms.TextBox textBoxDemanda3;
         private System.Windows.Forms.TextBox textBoxDemanda2;
         private System.Windows.Forms.TextBox textBoxDemanda1;

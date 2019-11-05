@@ -120,6 +120,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCAquisicao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAquisicao.Designer.cs">
+      <DependentUpon>UCAquisicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMonitoramento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMonitoramento.Designer.cs">
+      <DependentUpon>UCMonitoramento.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Tela_ControleCentral.resx">
       <DependentUpon>Tela_ControleCentral.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_login.resx">
       <DependentUpon>Tela_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAquisicao.resx">
+      <DependentUpon>UCAquisicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMonitoramento.resx">
+      <DependentUpon>UCMonitoramento.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

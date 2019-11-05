@@ -210,12 +210,13 @@ namespace Supervisoria___tcc
         private void Timer2_Tick(object sender, EventArgs e)
         {
             //Console.WriteLine("Entrou no tick 2");
+            /*
             double[] demanda = sortearDemanda();
 
             Auxiliar.demandaProdutos[0] =  demanda[0];
             Auxiliar.demandaProdutos[1] =  demanda[1];
             Auxiliar.demandaProdutos[2] =  demanda[2];
-
+            
             //Auxiliar.demandaProdutos[0] = Auxiliar.demandaProdutos[0] + demanda[0];
             //Auxiliar.demandaProdutos[1] = Auxiliar.demandaProdutos[1] + demanda[1];
             //Auxiliar.demandaProdutos[2] = Auxiliar.demandaProdutos[2] + demanda[2];
@@ -223,7 +224,7 @@ namespace Supervisoria___tcc
             textBoxDemanda1.Text = demanda[0].ToString();
             textBoxDemanda2.Text = demanda[1].ToString();
             textBoxDemanda3.Text = demanda[2].ToString();
-
+            */
             Auxiliar.EnviarBitDesligar();
 
             timer1.Enabled = false;
