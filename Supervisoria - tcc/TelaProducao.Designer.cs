@@ -109,11 +109,12 @@
             // 
             this.botao_voltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
             this.botao_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botao_voltar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botao_voltar.Location = new System.Drawing.Point(69, 318);
             this.botao_voltar.Name = "botao_voltar";
             this.botao_voltar.Size = new System.Drawing.Size(109, 52);
             this.botao_voltar.TabIndex = 6;
-            this.botao_voltar.Text = "Voltar";
+            this.botao_voltar.Text = "Sair";
             this.botao_voltar.UseVisualStyleBackColor = true;
             this.botao_voltar.Click += new System.EventHandler(this.Botao_voltar_Click);
             // 
@@ -198,6 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(705, 417);
+            this.ControlBox = false;
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label_time);
             this.Controls.Add(this.textBoxDemanda3);

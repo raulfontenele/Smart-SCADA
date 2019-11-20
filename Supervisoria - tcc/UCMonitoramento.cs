@@ -17,12 +17,8 @@ namespace Supervisoria___tcc
             InitializeComponent();
         }
 
-        private void TimerAtualizacao_Tick(object sender, EventArgs e)
-        {
-            atualizarProdutos();
-        }
 
-        public void atualizarProdutos()
+        private void atualizarProdutos()
         {
             for (var index = 0; index < 6; index = index + 2)
             {
@@ -86,9 +82,26 @@ namespace Supervisoria___tcc
             }
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void atualizarDemanda()
         {
-            MessageBox.Show("Entrou no tick");
+            caixaDemanda1.Text = Auxiliar.demandaProdutos[0].ToString();
+            caixaDemanda2.Text = Auxiliar.demandaProdutos[1].ToString();
+            caixaDemanda3.Text = Auxiliar.demandaProdutos[2].ToString();
+        }
+
+        private void TimerAtualizacao_Tick(object sender, EventArgs e)
+        {
+            atualizarProdutos();
+            atualizarDemanda();
+        }
+
+        public void HabiliarTela()
+        {
+            timerAtualizacao.Enabled = true;
+        }
+        public void DesabilitarTela()
+        {
+            timerAtualizacao.Enabled = true;
         }
     }
 }

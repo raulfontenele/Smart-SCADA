@@ -16,7 +16,6 @@ namespace Supervisoria___tcc
         public Tela_login()
         {
             InitializeComponent();
-            Console.WriteLine("Qualquer bosta");
             Auxiliar.iniciarControleAcesso();
         }
 
@@ -55,24 +54,28 @@ namespace Supervisoria___tcc
                 try
                 {
                     Auxiliar.criarTabelaControleUsuario();
+                    Auxiliar.criarTabelaHistoricoUsuario();
                 }
                 catch { }
+
 
                 //Capturar Nome de usuário e nível de acesso.
                 comando.CommandText = "SELECT NivelDeAcesso FROM TabelaUsuarios WHERE Usuario = '" + caixaUsuario.Text + "' AND Senha = '" + caixaSenha.Text+"'";
 
                 Auxiliar.nome_usuario = caixaUsuario.Text;
                 Auxiliar.nivel_acesso = comando.ExecuteScalar().ToString();
+
                 
-                Tela_ControleCentral tela_Central = new Tela_ControleCentral();
+                TelaControleCentral tela_Controle = new TelaControleCentral();
                 this.Hide();
-                tela_Central.ShowDialog();
+                tela_Controle.ShowDialog();
                 
+
                 /*
-                TelaEscolhas tela_Escolhas = new TelaEscolhas();
-                this.Hide();
-                tela_Escolhas.ShowDialog();
-            */
+               TelaEscolhas tela_Escolhas = new TelaEscolhas();
+               this.Hide();
+               tela_Escolhas.ShowDialog();
+              */
                 this.Show();
                 
             }

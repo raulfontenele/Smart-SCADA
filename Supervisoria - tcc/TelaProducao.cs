@@ -43,6 +43,7 @@ namespace Supervisoria___tcc
 
         private void Botao_voltar_Click(object sender, EventArgs e)
         {
+            Auxiliar.ctrTelaProducao = false;
             this.Close();
         }
 

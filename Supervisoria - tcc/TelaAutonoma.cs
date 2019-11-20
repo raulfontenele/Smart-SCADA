@@ -18,8 +18,8 @@ namespace Supervisoria___tcc
         {
             InitializeComponent();
         }
-        
-        static int[] vet = new int[] {8,8,8,8};
+
+        static int[] vet = new int[] { 14,14,14,14,14 };
         static MLP teste = new MLP(0.3, 0.000001, vet, 6, 12000);
         
         bool ctr = false;
@@ -44,6 +44,7 @@ namespace Supervisoria___tcc
         private void Timer1_Tick(object sender, EventArgs e)
         {
             aplicarRede();
+            Auxiliar.gravarHistoricoProducao();
 
             Auxiliar.timer--;
           
@@ -69,13 +70,13 @@ namespace Supervisoria___tcc
             //timer1.Enabled = false;
             //timer2.Enabled = false;
 
-            timer2.Interval = 600000;
+            timer2.Interval = 570000;
             timer1.Interval = 1000;
 
             timer1.Enabled = false;
             timer2.Enabled = false;
 
-            Auxiliar.timer = 600;
+            Auxiliar.timer = 570;
 
             timerCtr.Reset();
 
@@ -165,7 +166,7 @@ namespace Supervisoria___tcc
                 vetorEntrada[index + 3] = Auxiliar.qtdProduzidaProdutos[index];
             }
             Console.WriteLine("=================");
-            //var vetinho = Matrix<double>.Build.Dense( 1,9,vetorEntrada);
+            //var vetinho = Matrix<double>.Build.Dense( 1,6,vetorEntrada);
             //Console.WriteLine("vetinho" + vetinho);
             
             var retorno= (Matrix<double>)teste.aplicacao(vetorEntrada);
@@ -192,6 +193,7 @@ namespace Supervisoria___tcc
         private void Botao_zerar_Click(object sender, EventArgs e)
         {
             Auxiliar.enviarBitZerar();
+            Auxiliar.timer = 570;
         }
 
         private void Button1_Click(object sender, EventArgs e)

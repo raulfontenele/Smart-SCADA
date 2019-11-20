@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.botao_pause = new System.Windows.Forms.Button();
-            this.botaoZerar = new System.Windows.Forms.Button();
             this.botao_desligar = new System.Windows.Forms.Button();
             this.botao_Ligar = new System.Windows.Forms.Button();
             this.botao_Bit_Produtos = new System.Windows.Forms.Button();
@@ -42,6 +41,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timerAtualizacao = new System.Windows.Forms.Timer(this.components);
             this.timerCiclo = new System.Windows.Forms.Timer(this.components);
+            this.botaoDemanda = new System.Windows.Forms.Button();
+            this.caixaDemanda3 = new System.Windows.Forms.TextBox();
+            this.caixaDemanda2 = new System.Windows.Forms.TextBox();
+            this.caixaDemanda1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.timerAtualizacaoDemanda = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // botao_pause
@@ -50,7 +57,7 @@
             this.botao_pause.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
             this.botao_pause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botao_pause.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botao_pause.Location = new System.Drawing.Point(433, 353);
+            this.botao_pause.Location = new System.Drawing.Point(433, 287);
             this.botao_pause.Margin = new System.Windows.Forms.Padding(0);
             this.botao_pause.Name = "botao_pause";
             this.botao_pause.Size = new System.Drawing.Size(129, 61);
@@ -60,29 +67,13 @@
             this.botao_pause.UseVisualStyleBackColor = false;
             this.botao_pause.Click += new System.EventHandler(this.Botao_pause_Click);
             // 
-            // botaoZerar
-            // 
-            this.botaoZerar.BackColor = System.Drawing.Color.LightGray;
-            this.botaoZerar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.botaoZerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoZerar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botaoZerar.Location = new System.Drawing.Point(433, 280);
-            this.botaoZerar.Margin = new System.Windows.Forms.Padding(0);
-            this.botaoZerar.Name = "botaoZerar";
-            this.botaoZerar.Size = new System.Drawing.Size(129, 61);
-            this.botaoZerar.TabIndex = 23;
-            this.botaoZerar.TabStop = false;
-            this.botaoZerar.Text = "Zerar";
-            this.botaoZerar.UseVisualStyleBackColor = false;
-            this.botaoZerar.Click += new System.EventHandler(this.BotaoZerar_Click);
-            // 
             // botao_desligar
             // 
             this.botao_desligar.BackColor = System.Drawing.Color.LightGray;
             this.botao_desligar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
             this.botao_desligar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botao_desligar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botao_desligar.Location = new System.Drawing.Point(433, 207);
+            this.botao_desligar.Location = new System.Drawing.Point(433, 210);
             this.botao_desligar.Margin = new System.Windows.Forms.Padding(0);
             this.botao_desligar.Name = "botao_desligar";
             this.botao_desligar.Size = new System.Drawing.Size(129, 61);
@@ -97,7 +88,7 @@
             this.botao_Ligar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
             this.botao_Ligar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botao_Ligar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botao_Ligar.Location = new System.Drawing.Point(433, 129);
+            this.botao_Ligar.Location = new System.Drawing.Point(433, 133);
             this.botao_Ligar.Margin = new System.Windows.Forms.Padding(0);
             this.botao_Ligar.Name = "botao_Ligar";
             this.botao_Ligar.Size = new System.Drawing.Size(129, 61);
@@ -184,6 +175,89 @@
             // timerAtualizacao
             // 
             this.timerAtualizacao.Interval = 1000;
+            this.timerAtualizacao.Tick += new System.EventHandler(this.TimerAtualizacao_Tick);
+            // 
+            // timerCiclo
+            // 
+            this.timerCiclo.Interval = 570000;
+            this.timerCiclo.Tick += new System.EventHandler(this.TimerCiclo_Tick);
+            // 
+            // botaoDemanda
+            // 
+            this.botaoDemanda.BackColor = System.Drawing.Color.LightGray;
+            this.botaoDemanda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CornflowerBlue;
+            this.botaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botaoDemanda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botaoDemanda.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.botaoDemanda.Location = new System.Drawing.Point(772, 252);
+            this.botaoDemanda.Name = "botaoDemanda";
+            this.botaoDemanda.Size = new System.Drawing.Size(258, 35);
+            this.botaoDemanda.TabIndex = 39;
+            this.botaoDemanda.Text = "Processar Demanda";
+            this.botaoDemanda.UseVisualStyleBackColor = false;
+            this.botaoDemanda.Click += new System.EventHandler(this.BotaoDemanda_Click);
+            // 
+            // caixaDemanda3
+            // 
+            this.caixaDemanda3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caixaDemanda3.Location = new System.Drawing.Point(953, 197);
+            this.caixaDemanda3.Name = "caixaDemanda3";
+            this.caixaDemanda3.Size = new System.Drawing.Size(77, 21);
+            this.caixaDemanda3.TabIndex = 38;
+            // 
+            // caixaDemanda2
+            // 
+            this.caixaDemanda2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caixaDemanda2.Location = new System.Drawing.Point(953, 134);
+            this.caixaDemanda2.Name = "caixaDemanda2";
+            this.caixaDemanda2.Size = new System.Drawing.Size(77, 21);
+            this.caixaDemanda2.TabIndex = 37;
+            // 
+            // caixaDemanda1
+            // 
+            this.caixaDemanda1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caixaDemanda1.Location = new System.Drawing.Point(953, 74);
+            this.caixaDemanda1.Name = "caixaDemanda1";
+            this.caixaDemanda1.Size = new System.Drawing.Size(77, 21);
+            this.caixaDemanda1.TabIndex = 36;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(769, 197);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(173, 17);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Demanda do produto 3";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(769, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(173, 17);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Demanda do produto 2";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(769, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(173, 17);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Demanda do produto 1";
+            // 
+            // timerAtualizacaoDemanda
+            // 
+            this.timerAtualizacaoDemanda.Interval = 1000;
+            this.timerAtualizacaoDemanda.Tick += new System.EventHandler(this.TimerAtualizacaoDemanda_Tick);
             // 
             // UCAquisicao
             // 
@@ -191,6 +265,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.Capturar1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.botaoDemanda);
+            this.Controls.Add(this.caixaDemanda3);
+            this.Controls.Add(this.caixaDemanda2);
+            this.Controls.Add(this.caixaDemanda1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lista_produtos_1);
@@ -198,7 +279,6 @@
             this.Controls.Add(this.lista_produtos_2);
             this.Controls.Add(this.lista_produtos_3);
             this.Controls.Add(this.botao_pause);
-            this.Controls.Add(this.botaoZerar);
             this.Controls.Add(this.botao_desligar);
             this.Controls.Add(this.botao_Ligar);
             this.Controls.Add(this.botao_Bit_Produtos);
@@ -208,13 +288,13 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1204, 700);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button botao_pause;
-        private System.Windows.Forms.Button botaoZerar;
         private System.Windows.Forms.Button botao_desligar;
         private System.Windows.Forms.Button botao_Ligar;
         private System.Windows.Forms.Button botao_Bit_Produtos;
@@ -226,5 +306,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timerAtualizacao;
         private System.Windows.Forms.Timer timerCiclo;
+        private System.Windows.Forms.Button botaoDemanda;
+        private System.Windows.Forms.TextBox caixaDemanda3;
+        private System.Windows.Forms.TextBox caixaDemanda2;
+        private System.Windows.Forms.TextBox caixaDemanda1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timerAtualizacaoDemanda;
     }
 }

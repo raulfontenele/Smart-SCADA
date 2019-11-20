@@ -63,17 +63,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Tela_ControleCentral.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tela_ControleCentral.Designer.cs">
-      <DependentUpon>Tela_ControleCentral.cs</DependentUpon>
-    </Compile>
     <Compile Include="TelaAutonoma.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TelaAutonoma.Designer.cs">
       <DependentUpon>TelaAutonoma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaControleCentral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaControleCentral.Designer.cs">
+      <DependentUpon>TelaControleCentral.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaEscolhas.cs">
       <SubType>Form</SubType>
@@ -126,15 +126,18 @@
     <Compile Include="UCAquisicao.Designer.cs">
       <DependentUpon>UCAquisicao.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCAutonoma.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAutonoma.Designer.cs">
+      <DependentUpon>UCAutonoma.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMonitoramento.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCMonitoramento.Designer.cs">
       <DependentUpon>UCMonitoramento.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Tela_ControleCentral.resx">
-      <DependentUpon>Tela_ControleCentral.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -147,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="TelaAutonoma.resx">
       <DependentUpon>TelaAutonoma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaControleCentral.resx">
+      <DependentUpon>TelaControleCentral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaDeControle.resx">
       <DependentUpon>TelaDeControle.cs</DependentUpon>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCAquisicao.resx">
       <DependentUpon>UCAquisicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAutonoma.resx">
+      <DependentUpon>UCAutonoma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMonitoramento.resx">
       <DependentUpon>UCMonitoramento.cs</DependentUpon>

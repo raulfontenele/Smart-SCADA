@@ -35,7 +35,13 @@
             this.labelProduto1 = new System.Windows.Forms.Label();
             this.labelProduto2 = new System.Windows.Forms.Label();
             this.labelProduto3 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerAtualizacao = new System.Windows.Forms.Timer(this.components);
+            this.caixaDemanda3 = new System.Windows.Forms.TextBox();
+            this.caixaDemanda2 = new System.Windows.Forms.TextBox();
+            this.caixaDemanda1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelIndicacaoProduto1
@@ -107,9 +113,67 @@
             this.labelProduto3.TabIndex = 5;
             this.labelProduto3.Text = "-";
             // 
-            // timer1
+            // timerAtualizacao
             // 
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.timerAtualizacao.Interval = 1000;
+            this.timerAtualizacao.Tick += new System.EventHandler(this.TimerAtualizacao_Tick);
+            // 
+            // caixaDemanda3
+            // 
+            this.caixaDemanda3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caixaDemanda3.Location = new System.Drawing.Point(921, 212);
+            this.caixaDemanda3.Name = "caixaDemanda3";
+            this.caixaDemanda3.Size = new System.Drawing.Size(77, 21);
+            this.caixaDemanda3.TabIndex = 13;
+            // 
+            // caixaDemanda2
+            // 
+            this.caixaDemanda2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caixaDemanda2.Location = new System.Drawing.Point(921, 149);
+            this.caixaDemanda2.Name = "caixaDemanda2";
+            this.caixaDemanda2.Size = new System.Drawing.Size(77, 21);
+            this.caixaDemanda2.TabIndex = 12;
+            // 
+            // caixaDemanda1
+            // 
+            this.caixaDemanda1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caixaDemanda1.Location = new System.Drawing.Point(921, 89);
+            this.caixaDemanda1.Name = "caixaDemanda1";
+            this.caixaDemanda1.Size = new System.Drawing.Size(77, 21);
+            this.caixaDemanda1.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(737, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(178, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Demanda do produto 3:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(737, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(178, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Demanda do produto 2:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(737, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Demanda do produto 1:";
             // 
             // UCMonitoramento
             // 
@@ -117,6 +181,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.Capturar1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.caixaDemanda3);
+            this.Controls.Add(this.caixaDemanda2);
+            this.Controls.Add(this.caixaDemanda1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelProduto3);
             this.Controls.Add(this.labelProduto2);
             this.Controls.Add(this.labelProduto1);
@@ -140,6 +210,12 @@
         private System.Windows.Forms.Label labelProduto1;
         private System.Windows.Forms.Label labelProduto2;
         private System.Windows.Forms.Label labelProduto3;
-        public System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox caixaDemanda3;
+        private System.Windows.Forms.TextBox caixaDemanda2;
+        private System.Windows.Forms.TextBox caixaDemanda1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timerAtualizacao;
     }
 }

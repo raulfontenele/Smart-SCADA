@@ -16,7 +16,7 @@ namespace Supervisoria___tcc
         public static string base_dados = pasta_dados + "DadosScada.sdf" + ";password = 'password123'";
         public static string nome_usuario;
         public static string nivel_acesso;
-        public static string ipCLP = "172.19.10.113";
+        public static string ipCLP = "172.19.10.153";
         //public static string base_dados_controle = pasta_dados + "DadosScadaControle.sdf" + ";password = 'password123'";
 
         //Variáveis do supervisório
@@ -32,7 +32,11 @@ namespace Supervisoria___tcc
 
         public static bool controleDemanda = false;
 
-        public static int timer = 600;
+        public static int timer = 570;
+
+        public static bool ctrTelaProducao = false;
+
+        public static bool ctrTelaHistorico = false;
 
 
 
@@ -166,6 +170,31 @@ namespace Supervisoria___tcc
 
         }
 
+        public static void criarTabelaHistoricoUsuario()
+        {
+            SqlCeConnection ligacao = new SqlCeConnection();
+            ligacao.ConnectionString = @"Data Source = " + base_dados;
+            ligacao.Open();
+
+            SqlCeCommand comando = new SqlCeCommand();
+            comando.CommandText =
+                "CREATE TABLE TabelaHistorico" + nome_usuario + " (" +
+                "Timer                    int not null," +
+                "DemandaProduto1          int not null," +
+                "DemandaProduto2          int not null," +
+                "DemandaProduto3          int not null," +
+                "QtdProduzidaProduto1     int not null," +
+                "QtdProduzidaProduto2     int not null," +
+                "QtdProduzidaProduto3     int not null)";
+
+            comando.Connection = ligacao;
+            comando.ExecuteNonQuery();
+
+            comando.Dispose();
+            ligacao.Dispose();
+
+        }
+
         public static void enviarDadosProducao()
         {
             //Criar a ligação com a base de dados
@@ -211,6 +240,41 @@ namespace Supervisoria___tcc
             ligacao.Dispose();
         }
 
+        public static void gravarHistoricoProducao()
+        {
+            //Criar a ligação com a base de dados
+            SqlCeConnection ligacao = new SqlCeConnection();
+            ligacao.ConnectionString = @"Data Source = " + base_dados;
+
+            //Abrindo ligação com a base de dados   
+            ligacao.Open();
+
+
+            //criar um comando
+            SqlCeCommand comando = new SqlCeCommand();
+            comando.Connection = ligacao;
+
+            //adicionando os parâmetros
+            comando.Parameters.AddWithValue(@"Timer", timer);
+            comando.Parameters.AddWithValue(@"DemandaProduto1", demandaProdutos[0]);
+            comando.Parameters.AddWithValue(@"DemandaProduto2", demandaProdutos[1]);
+            comando.Parameters.AddWithValue(@"DemandaProduto3", demandaProdutos[2]);
+            comando.Parameters.AddWithValue(@"QtdProduzidaProduto1", qtdProduzidaProdutos[0]);
+            comando.Parameters.AddWithValue(@"QtdProduzidaProduto2", qtdProduzidaProdutos[1]);
+            comando.Parameters.AddWithValue(@"QtdProduzidaProduto3", qtdProduzidaProdutos[2]);
+
+
+
+            //inserir no banco de dados
+            comando.CommandText = "INSERT INTO TabelaHistorico" + nome_usuario + "(Timer,DemandaProduto1,DemandaProduto2,DemandaProduto3," +
+                                  "QtdProduzidaProduto1,QtdProduzidaProduto2,QtdProduzidaProduto3) VALUES(@Timer,@DemandaProduto1,@DemandaProduto2," +
+                                  "@DemandaProduto3,@QtdProduzidaProduto1,@QtdProduzidaProduto2,@QtdProduzidaProduto3)";
+            comando.ExecuteNonQuery();
+
+            comando.Dispose();
+            ligacao.Dispose();
+        }
+
         private static void criarUsuarioPrincipal()
         {
             //Criar a ligação com a base de dados
@@ -226,7 +290,6 @@ namespace Supervisoria___tcc
             comando.Connection = ligacao;
 
             //adicionando os parâmetros
-            //comando.Parameters.AddWithValue(@"Id", "0");
             comando.Parameters.AddWithValue(@"Usuario", "Adm");
             comando.Parameters.AddWithValue(@"Senha", "Adm123");
             comando.Parameters.AddWithValue(@"NivelDeAcesso", "All");
@@ -315,6 +378,19 @@ namespace Supervisoria___tcc
 
             //Fechando conexão com o CLP
             clp.Close();
+        }
+
+        public static void reinicializacaoSistema()
+        {
+            EnviarBitDesligar();
+
+            timer = 570;
+
+            //Colocar blocos produtivos para o modo desligado
+            for (int index = 0; index < 6; index++)
+            {
+                bitFuncionamento[index] = false;
+            }
         }
     }
 

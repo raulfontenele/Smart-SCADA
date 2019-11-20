@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlServerCe;
 
 namespace Supervisoria___tcc
 {
@@ -20,12 +14,43 @@ namespace Supervisoria___tcc
 
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {
-            if(caiaxaUsuario.Text == "Adm" && caixaSenha.Text == "Adm123")
+
+            //Criar a ligação com a base de dados
+            SqlCeConnection ligacao = new SqlCeConnection();
+            ligacao.ConnectionString = @"Data Source = " + Auxiliar.base_dados;
+
+            //Abrindo ligação com a base de dados   
+            ligacao.Open();
+
+            //criar um comando
+            SqlCeCommand comando = new SqlCeCommand();
+            comando.Connection = ligacao;
+
+            //adicionando os parâmetros
+            comando.Parameters.AddWithValue(@"Usuario", caixaUsuario.Text);
+            comando.Parameters.AddWithValue(@"Senha", caixaSenha.Text);
+
+            //Buscar no banco de dados o nome de usuário e a senha
+            comando.CommandText = "SELECT COUNT(1) FROM TabelaUsuarios WHERE Usuario = @Usuario AND Senha = @Senha";
+
+            Object retorno = comando.ExecuteScalar();
+            if (retorno.Equals(1))
             {
-                Tela_Cadastro telaCadastro = new Tela_Cadastro();
-                this.Hide();
-                telaCadastro.ShowDialog();
-                this.Close();
+                //Capturar Nome de usuário e nível de acesso.
+                comando.CommandText = "SELECT NivelDeAcesso FROM TabelaUsuarios WHERE Usuario = '" + caixaUsuario.Text + "' AND Senha = '" + caixaSenha.Text + "'";
+
+                if (comando.ExecuteScalar().ToString() == "All")
+                {
+                    Tela_Cadastro telaCadastro = new Tela_Cadastro();
+                    this.Hide();
+                    telaCadastro.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Nível de acesso insuficiente para cadastrar novos usuários!");
+                }
+
             }
             else
             {
@@ -33,7 +58,7 @@ namespace Supervisoria___tcc
             }
         }
 
-        private void BotaoVoltar_Click(object sender, EventArgs e)
+        private void Botao_Voltar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
