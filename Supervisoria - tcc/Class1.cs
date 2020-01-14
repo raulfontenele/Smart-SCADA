@@ -255,7 +255,7 @@ namespace Supervisoria___tcc
             comando.Connection = ligacao;
 
             //adicionando os parâmetros
-            comando.Parameters.AddWithValue(@"Timer", timer);
+            comando.Parameters.AddWithValue(@"Timer", 570-timer);
             comando.Parameters.AddWithValue(@"DemandaProduto1", demandaProdutos[0]);
             comando.Parameters.AddWithValue(@"DemandaProduto2", demandaProdutos[1]);
             comando.Parameters.AddWithValue(@"DemandaProduto3", demandaProdutos[2]);

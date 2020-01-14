@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Supervisoria___tcc\Properties\Recurses.cs" />
     <Compile Include="TelaAutonoma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +201,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Capturar1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elementoAzul1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elementoCinza1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elementoVerde1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

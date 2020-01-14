@@ -16,6 +16,7 @@ namespace Supervisoria___tcc
         public Tela_Graficos()
         {
             InitializeComponent();
+            adicionarUsuarios();
         }
 
           private void mostrarGrafico()
@@ -39,7 +40,15 @@ namespace Supervisoria___tcc
             chart1.Series[0].XValueMember = "Timer";
             chart1.Series[0].YValueMembers = "DemandaProduto1";
             chart1.Series[1].XValueMember = "Timer";
-            chart1.Series[1].YValueMembers = "QtdProduzidaProduto1";
+            chart1.Series[1].YValueMembers = "DemandaProduto2";
+            chart1.Series[2].XValueMember = "Timer";
+            chart1.Series[2].YValueMembers = "DemandaProduto3";
+            chart1.Series[3].XValueMember = "Timer";
+            chart1.Series[3].YValueMembers = "QtdProduzidaProduto1";
+            chart1.Series[4].XValueMember = "Timer";
+            chart1.Series[4].YValueMembers = "QtdProduzidaProduto2";
+            chart1.Series[5].XValueMember = "Timer";
+            chart1.Series[5].YValueMembers = "QtdProduzidaProduto3";
             chart1.DataBind();
 
 
@@ -58,5 +67,23 @@ namespace Supervisoria___tcc
         {
             this.Close();
         }
+
+        private void Bt_Historico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adicionarUsuarios()
+        {
+            if (Auxiliar.nivel_acesso == "All")
+            {
+                caixaUsuarios.Items.Add("Raul");
+            }
+            else
+            {
+                caixaUsuarios.Items.Add("Raul");
+            }
+        }
+
     }
 }

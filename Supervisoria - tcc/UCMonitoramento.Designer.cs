@@ -42,6 +42,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.imagemEsteira1Lenta = new System.Windows.Forms.PictureBox();
+            this.imagemEsteira2Lenta = new System.Windows.Forms.PictureBox();
+            this.imagemEsteira2Media = new System.Windows.Forms.PictureBox();
+            this.imagemEsteira2Rapida = new System.Windows.Forms.PictureBox();
+            this.imagemEsteira3Lenta = new System.Windows.Forms.PictureBox();
+            this.imagemEsteira3Media = new System.Windows.Forms.PictureBox();
+            this.imagemEsteira3Rapida = new System.Windows.Forms.PictureBox();
+            this.imagemEsteira1Rapida = new System.Windows.Forms.PictureBox();
+            this.imagemEsteira1Media = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira1Lenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira2Lenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira2Media)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira2Rapida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira3Lenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira3Media)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira3Rapida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira1Rapida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira1Media)).BeginInit();
             this.SuspendLayout();
             // 
             // labelIndicacaoProduto1
@@ -175,12 +193,120 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Demanda do produto 1:";
             // 
+            // imagemEsteira1Lenta
+            // 
+            this.imagemEsteira1Lenta.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira1Lenta.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira1Lenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira1Lenta.Location = new System.Drawing.Point(56, 89);
+            this.imagemEsteira1Lenta.Name = "imagemEsteira1Lenta";
+            this.imagemEsteira1Lenta.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira1Lenta.TabIndex = 16;
+            this.imagemEsteira1Lenta.TabStop = false;
+            // 
+            // imagemEsteira2Lenta
+            // 
+            this.imagemEsteira2Lenta.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira2Lenta.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira2Lenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira2Lenta.Location = new System.Drawing.Point(56, 295);
+            this.imagemEsteira2Lenta.Name = "imagemEsteira2Lenta";
+            this.imagemEsteira2Lenta.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira2Lenta.TabIndex = 17;
+            this.imagemEsteira2Lenta.TabStop = false;
+            // 
+            // imagemEsteira2Media
+            // 
+            this.imagemEsteira2Media.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira2Media.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira2Media.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira2Media.Location = new System.Drawing.Point(56, 339);
+            this.imagemEsteira2Media.Name = "imagemEsteira2Media";
+            this.imagemEsteira2Media.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira2Media.TabIndex = 18;
+            this.imagemEsteira2Media.TabStop = false;
+            // 
+            // imagemEsteira2Rapida
+            // 
+            this.imagemEsteira2Rapida.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira2Rapida.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira2Rapida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira2Rapida.Location = new System.Drawing.Point(56, 385);
+            this.imagemEsteira2Rapida.Name = "imagemEsteira2Rapida";
+            this.imagemEsteira2Rapida.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira2Rapida.TabIndex = 19;
+            this.imagemEsteira2Rapida.TabStop = false;
+            // 
+            // imagemEsteira3Lenta
+            // 
+            this.imagemEsteira3Lenta.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira3Lenta.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira3Lenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira3Lenta.Location = new System.Drawing.Point(43, 502);
+            this.imagemEsteira3Lenta.Name = "imagemEsteira3Lenta";
+            this.imagemEsteira3Lenta.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira3Lenta.TabIndex = 20;
+            this.imagemEsteira3Lenta.TabStop = false;
+            // 
+            // imagemEsteira3Media
+            // 
+            this.imagemEsteira3Media.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira3Media.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira3Media.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira3Media.Location = new System.Drawing.Point(43, 548);
+            this.imagemEsteira3Media.Name = "imagemEsteira3Media";
+            this.imagemEsteira3Media.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira3Media.TabIndex = 21;
+            this.imagemEsteira3Media.TabStop = false;
+            // 
+            // imagemEsteira3Rapida
+            // 
+            this.imagemEsteira3Rapida.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira3Rapida.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira3Rapida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira3Rapida.Location = new System.Drawing.Point(43, 597);
+            this.imagemEsteira3Rapida.Name = "imagemEsteira3Rapida";
+            this.imagemEsteira3Rapida.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira3Rapida.TabIndex = 22;
+            this.imagemEsteira3Rapida.TabStop = false;
+            // 
+            // imagemEsteira1Rapida
+            // 
+            this.imagemEsteira1Rapida.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira1Rapida.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira1Rapida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira1Rapida.Location = new System.Drawing.Point(56, 175);
+            this.imagemEsteira1Rapida.Name = "imagemEsteira1Rapida";
+            this.imagemEsteira1Rapida.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira1Rapida.TabIndex = 23;
+            this.imagemEsteira1Rapida.TabStop = false;
+            // 
+            // imagemEsteira1Media
+            // 
+            this.imagemEsteira1Media.BackColor = System.Drawing.Color.Transparent;
+            this.imagemEsteira1Media.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.X;
+            this.imagemEsteira1Media.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagemEsteira1Media.Location = new System.Drawing.Point(56, 132);
+            this.imagemEsteira1Media.Name = "imagemEsteira1Media";
+            this.imagemEsteira1Media.Size = new System.Drawing.Size(28, 21);
+            this.imagemEsteira1Media.TabIndex = 24;
+            this.imagemEsteira1Media.TabStop = false;
+            // 
             // UCMonitoramento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Supervisoria___tcc.Properties.Resources.Capturar1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.imagemEsteira1Media);
+            this.Controls.Add(this.imagemEsteira1Rapida);
+            this.Controls.Add(this.imagemEsteira3Rapida);
+            this.Controls.Add(this.imagemEsteira3Media);
+            this.Controls.Add(this.imagemEsteira3Lenta);
+            this.Controls.Add(this.imagemEsteira2Rapida);
+            this.Controls.Add(this.imagemEsteira2Media);
+            this.Controls.Add(this.imagemEsteira2Lenta);
+            this.Controls.Add(this.imagemEsteira1Lenta);
             this.Controls.Add(this.caixaDemanda3);
             this.Controls.Add(this.caixaDemanda2);
             this.Controls.Add(this.caixaDemanda1);
@@ -197,6 +323,15 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UCMonitoramento";
             this.Size = new System.Drawing.Size(1204, 700);
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira1Lenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira2Lenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira2Media)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira2Rapida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira3Lenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira3Media)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira3Rapida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira1Rapida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagemEsteira1Media)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +352,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timerAtualizacao;
+        private System.Windows.Forms.PictureBox imagemEsteira1Lenta;
+        private System.Windows.Forms.PictureBox imagemEsteira2Lenta;
+        private System.Windows.Forms.PictureBox imagemEsteira2Media;
+        private System.Windows.Forms.PictureBox imagemEsteira2Rapida;
+        private System.Windows.Forms.PictureBox imagemEsteira3Lenta;
+        private System.Windows.Forms.PictureBox imagemEsteira3Media;
+        private System.Windows.Forms.PictureBox imagemEsteira3Rapida;
+        private System.Windows.Forms.PictureBox imagemEsteira1Rapida;
+        private System.Windows.Forms.PictureBox imagemEsteira1Media;
     }
 }

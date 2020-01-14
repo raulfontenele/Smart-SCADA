@@ -217,7 +217,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TelaProducao";
-            this.Text = "TelaProducao";
+            this.Text = "                                                                                 " +
+    "             Tela de Produção";
             this.Load += new System.EventHandler(this.TelaProducao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

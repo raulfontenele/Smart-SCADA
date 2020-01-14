@@ -93,6 +93,7 @@ namespace Supervisoria___tcc
         {
             atualizarProdutos();
             atualizarDemanda();
+            AtualizarSimbolos();
         }
 
         public void HabiliarTela()
@@ -102,6 +103,94 @@ namespace Supervisoria___tcc
         public void DesabilitarTela()
         {
             timerAtualizacao.Enabled = true;
+        }
+
+        private void AtualizarSimbolos()
+        {
+            for (var index = 0; index < 6; index = index + 2)
+            {
+                if (index == 0)
+                {
+                    if (Auxiliar.bitProdutos[index] == false && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira1Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira1Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira1Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == false)
+                    {
+                        imagemEsteira1Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira1Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira1Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira1Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira1Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira1Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else
+                    {
+                        imagemEsteira1Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira1Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira1Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                }
+                else if (index == 2)
+                {
+                    if (Auxiliar.bitProdutos[index] == false && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira2Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira2Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira2Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == false)
+                    {
+                        imagemEsteira2Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira2Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira2Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira2Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira2Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira2Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else
+                    {
+                        imagemEsteira2Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira2Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira2Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                }
+                else if (index == 4)
+                {
+                    if (Auxiliar.bitProdutos[index] == false && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira3Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira3Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira3Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == false)
+                    {
+                        imagemEsteira3Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira3Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira3Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira3Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira3Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira3Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else
+                    {
+                        imagemEsteira3Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira3Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira3Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                }
+            }
         }
     }
 }

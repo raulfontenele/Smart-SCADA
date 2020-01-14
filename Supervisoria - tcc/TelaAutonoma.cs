@@ -19,7 +19,7 @@ namespace Supervisoria___tcc
             InitializeComponent();
         }
 
-        static int[] vet = new int[] { 14,14,14,14,14 };
+        static int[] vet = new int[] { 14,14,14,14 };
         static MLP teste = new MLP(0.3, 0.000001, vet, 6, 12000);
         
         bool ctr = false;

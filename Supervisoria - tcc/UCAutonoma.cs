@@ -12,7 +12,7 @@ namespace Supervisoria___tcc
             InitializeComponent();
         }
 
-        static int[] vet = new int[] { 12, 12, 12 };
+        static int[] vet = new int[] { 12, 12, 12, 12 };
         static MLP teste = new MLP(0.3, 0.000001, vet, 6, 12000);
 
         private void BotaoDemanda_Click(object sender, EventArgs e)
@@ -84,8 +84,10 @@ namespace Supervisoria___tcc
         {
             aplicarRede();
             atualizarProdutos();
-            Auxiliar.gravarHistoricoProducao();
+            AtualizarSimbolos();
             Auxiliar.timer--;
+            Auxiliar.gravarHistoricoProducao();
+
         }
 
         private void TimerCiclo_Tick(object sender, EventArgs e)
@@ -192,6 +194,93 @@ namespace Supervisoria___tcc
             caixaDemanda1.Text = Auxiliar.demandaProdutos[0].ToString();
             caixaDemanda2.Text = Auxiliar.demandaProdutos[1].ToString();
             caixaDemanda3.Text = Auxiliar.demandaProdutos[2].ToString();
+        }
+        private void AtualizarSimbolos()
+        {
+            for (var index = 0; index < 6; index = index + 2)
+            {
+                if (index == 0)
+                {
+                    if (Auxiliar.bitProdutos[index] == false && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira1Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira1Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira1Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == false)
+                    {
+                        imagemEsteira1Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira1Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira1Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira1Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira1Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira1Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else
+                    {
+                        imagemEsteira1Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira1Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira1Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                }
+                else if (index == 2)
+                {
+                    if (Auxiliar.bitProdutos[index] == false && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira2Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira2Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira2Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == false)
+                    {
+                        imagemEsteira2Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira2Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira2Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira2Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira2Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira2Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else
+                    {
+                        imagemEsteira2Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira2Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira2Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                }
+                else if (index == 4)
+                {
+                    if (Auxiliar.bitProdutos[index] == false && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira3Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira3Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira3Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == false)
+                    {
+                        imagemEsteira3Lenta.BackgroundImage = Properties.Resources.elementoVerde;
+                        imagemEsteira3Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira3Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                    else if (Auxiliar.bitProdutos[index] == true && Auxiliar.bitProdutos[index + 1] == true)
+                    {
+                        imagemEsteira3Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira3Media.BackgroundImage = Properties.Resources.elementoAzul;
+                        imagemEsteira3Rapida.BackgroundImage = Properties.Resources.elementoCinza;
+                    }
+                    else
+                    {
+                        imagemEsteira3Lenta.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira3Media.BackgroundImage = Properties.Resources.X;
+                        imagemEsteira3Rapida.BackgroundImage = Properties.Resources.X;
+                    }
+                }
+            }
         }
     }
 }

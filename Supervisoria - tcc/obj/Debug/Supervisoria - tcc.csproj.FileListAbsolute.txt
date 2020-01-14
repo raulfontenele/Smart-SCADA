@@ -120,10 +120,11 @@ C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\S
 C:\Users\Raul\Documents\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_ControleCentral.resources
 C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCMonitoramento.resources
 C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCAquisicao.resources
-C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.Tela_ControleCentral.resources
 C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaAutonoma.resources
 C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaEscolhas.resources
 C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCAquisicao.resources
 C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCMonitoramento.resources
 C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaControleCentral.resources
 C:\Users\RAULFINHO\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCAutonoma.resources
+C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.TelaControleCentral.resources
+C:\Users\Raul\Google Drive\Unifor\TCC\Supervisório\Smart-SCADA\Supervisoria - tcc\obj\Debug\Supervisoria___tcc.UCAutonoma.resources

@@ -132,8 +132,14 @@ namespace Supervisoria___tcc
         {
             timerAtualizacao.Enabled = true;
             timerCiclo.Enabled = true;
-
-            Auxiliar.enviarBitLigar();
+            try
+            {
+                Auxiliar.enviarBitLigar();
+            }
+            catch
+            {
+                MessageBox.Show("Controlador não conectado!");
+            }
             timerCtr.Start();
         }
 
@@ -145,7 +151,15 @@ namespace Supervisoria___tcc
 
             timerCiclo.Interval = 570000;
             Auxiliar.timer = 570;
-            Auxiliar.EnviarBitDesligar();
+            try
+            {
+                Auxiliar.EnviarBitDesligar();
+            }
+            catch
+            {
+                MessageBox.Show("Controlador não conectado!");
+            }
+            
         }
 
         private void Botao_pause_Click(object sender, EventArgs e)
@@ -154,7 +168,15 @@ namespace Supervisoria___tcc
             if (ctrPause == false)
             {
                 timerCtr.Stop();
-                Auxiliar.EnviarBitDesligar();
+
+                try
+                {
+                    Auxiliar.EnviarBitDesligar();
+                }
+                catch
+                {
+                    MessageBox.Show("Controlador não conectado!");
+                }
 
                 timerCiclo.Enabled = false;
                 timerAtualizacao.Enabled = false;
@@ -171,8 +193,15 @@ namespace Supervisoria___tcc
 
                 timerCiclo.Interval = 570000 - (int)timerCtr.ElapsedMilliseconds;
                 timerAtualizacao.Interval = 1000 - (int)timerCtr.ElapsedMilliseconds % 1000;
-
-                Auxiliar.enviarBitLigar();
+                try
+                {
+                    Auxiliar.enviarBitLigar();
+                }
+                catch
+                {
+                    MessageBox.Show("Controlador não conectado!");
+                }
+                
                 timerCtr.Start();
             }
         }
